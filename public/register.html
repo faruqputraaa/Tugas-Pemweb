@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boikot Sampah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-white">
+    <nav class="bg-grey-200 flex items-center justify-between p-0 pl-5 pr-5 fixed top-0 w-full z-20 bg-gray-100">
+        <div>
+            <!-- Ganti dengan logo Anda -->
+            <img src="img/logo.png" alt="Logo" class="h-20 p-3 p">
+        </div>
+        <ul class="flex flex-row space-x-8 align-middle">
+            <li>
+                <a href="index.html" class=" hover:text-green-500">Beranda</a> 
+            </li>
+            <li>
+                <a href="#" class=" hover:text-green-500">Layanan</a> 
+            </li>
+            <li>
+                <a href="#" class=" hover:text-green-500">Dashboard</a> 
+            </li>
+            <li>
+                <a href="#" class=" hover:text-green-500">Tentang Kami</a> 
+            </li>
+        </ul>
+        <div class="flex space-x-4">
+            <a class="inline-block rounded-full px-4 py-2 bg-green-700 text-white" href="login.html">Login</a>
+            <a class="inline-block rounded-full px-4 py-2 border-2 border-green-500 hover:border-green-600 transition duration-300" href="register.html">Daftar</a>
+           </div>
+   </nav>    
+    <form class="flex flex-col justify-center w-1/2 mx-auto mt-24 p-18">
+    <h1 class="text-3xl text-center font-bold">Selamat Datang di Boikot Sampah!🫳🫴✊</h1>
+        <div class=" m-4 flex flex-col space-y-8 p-10">
+            <div class="flex flex-col">
+                <label class="text-2xl mb-4 text-left font-bold">Nama Lengkap</label>
+                <div class="relative">
+                    <input type="text" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
+                    <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Nama</label>
+                </div>
+                <small class="ml-4">supporting text</small>
+            </div>
+            <div class="flex flex-col">
+                <label class="text-2xl mb-4 text-left font-bold">Password</label>
+                <div class="relative">
+                    <input type="password" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
+                    <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Password</label>
+                </div>
+                <small class="ml-4">Gunakan minimal 8 karakter dengan kombinasi huruf dan angka</small>
+            </div>
+            <div class="flex flex-col">
+                <label class="text-2xl mb-4 text-left font-bold">Email</label>
+                <div class="relative">
+                    <input type="text" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
+                    <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Email</label>
+                </div>
+                <small class="ml-4">supporting text</small>
+            </div>
+            <div class="flex flex-col">
+                <label class="text-2xl mb-4 text-left font-bold">No HP/WhatsApp</label>
+                <div class="relative">
+                    <input type="text" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
+                    <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">No HP/WhatsApp</label>
+                </div>
+                <small>supporting text</small>
+            </div>
+            <div class="flex flex-col space-y-2">
+                <button type="submit" class="bg-green-600 text-white h-14 text-xl font-sans font-semibold rounded-lg">Daftar</button>
+                <label class="text-xl mb-3 text-center font-sans ">Sudah punya akun? <a class="underline text-green-500 border-green-500 border-b-0" href="index.html">Masuk Sekarang</a></label>
+            </div>
+            
+            
+
+
+        </div>
+    </form>
+ </body>
+</html>
