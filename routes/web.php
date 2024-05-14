@@ -18,7 +18,7 @@ Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
 Route::get('/jual', [UserController::class, 'jual'])->name('jual');
 Route::get('/product', [UserController::class, 'product'])->name('product');
 Route::get('/beli', [UserController::class, 'beli'])->name('beli');
-Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
 
 
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

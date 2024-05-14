@@ -18,7 +18,7 @@ class UserController extends Controller
         $remember = $request->has('remember');
     
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->route('dashboard_index');
+            return redirect('/');
         } else {
             return redirect()->back()->with('error', 'Email atau password salah')->withInput();
         }

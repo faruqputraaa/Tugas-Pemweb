@@ -2,7 +2,7 @@
 @section('content')
 <div class="bg-cover bg-center" style="background-image: url({{asset('assets/images/bgregister.png')}})">
     <section class="pb-16 w-full flex flex-row justify-center pt-24 ">
-        <form class="flex flex-col justify-center w-1/2 mx-auto " action="{{ route('register_proses') }}" method="POST">
+        <form class="flex flex-col justify-center md:w-1/2 mx-auto " action="{{ route('register_proses') }}" method="POST">
             @csrf
             <h1 class="text-3xl text-center font-bold">Selamat Datang di Boikot Sampah!🫳🫴✊</h1>
             <div class=" m-4 flex flex-col space-y-8 p-10">

@@ -1,12 +1,13 @@
 @extends('Layout.Navbar')
 @section('content')
     <!-- Konten deskripsi produk -->
-    <div class="mx-28">
-        <div class="text-3xl font-bold mb-14">
-            <h1>Deskripsi Produk</h1>
-        </div>
-        <div class="flex flex-col w-full m-auto">
-            <div class="grid grid-cols-1 gap-6">
+    <section class="mt-24 h-screen">
+        <div class="mx-28">
+            <div class="text-3xl font-bold mb-14">
+                <h1>Deskripsi Produk</h1>
+            </div>
+            <div class="flex flex-col w-full m-auto">
+                <div class="grid grid-cols-1 gap-6">
                 <div class="overflow-hidden rounded-lg shadow-md">
                     <img src="{{ asset('assets/images/buang-sampah.jpg') }}" alt="Kertas" class="h-64 w-full object-cover">
                     <div class="p-4 bg-white">
@@ -21,4 +22,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
