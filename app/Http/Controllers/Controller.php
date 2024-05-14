@@ -34,6 +34,10 @@ class Controller
     {
         return view('register');
     }
+    public function kontak()
+    {
+        return view('kontak');
+    }
 
 
 }

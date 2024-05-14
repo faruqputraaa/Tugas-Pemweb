@@ -21,13 +21,13 @@
                     <a href="/" class=" hover:text-green-500">Beranda</a> 
                 </li>
                 <li>
-                    <a href="/layanan" class=" hover:text-green-500">Layanan</a> 
+                    <a href="{{ route ('layanan')}}" class=" hover:text-green-500">Layanan</a> 
                 </li>
                 <li>
-                    <a href="/beli" class=" hover:text-green-500">Marketplace</a> 
+                    <a href="{{route ('beli')}}" class=" hover:text-green-500">Marketplace</a> 
                 </li>
                 <li>
-                    <a href="#" class=" hover:text-green-500">Tentang Kami</a> 
+                    <a href="{{route ('kontak')}}" class=" hover:text-green-500">Kontak Kami</a> 
                 </li>
             </ul>
             <div class="flex space-x-4 items-center">
