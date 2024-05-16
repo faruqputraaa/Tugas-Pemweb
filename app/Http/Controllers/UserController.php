@@ -18,7 +18,7 @@ class UserController extends Controller
         $remember = $request->has('remember');
     
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->route('dashboard_index');
+            return redirect('/');
         } else {
             return redirect()->back()->with('error', 'Email atau password salah')->withInput();
         }
@@ -80,5 +80,11 @@ class UserController extends Controller
     
         $request->session()->forget('remember_token');
         return redirect()->route('login_form');
+    }
+    public function showProduct()
+    {
+        $images = ['/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg'];
+
+        return view('product', compact('images'));
     }
 }

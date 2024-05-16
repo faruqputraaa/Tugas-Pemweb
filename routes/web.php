@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
@@ -18,7 +19,10 @@ Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
 Route::get('/jual', [UserController::class, 'jual'])->name('jual');
 Route::get('/product', [UserController::class, 'product'])->name('product');
 Route::get('/beli', [UserController::class, 'beli'])->name('beli');
-Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
+Route::get('/product', [Controller::class, 'showProduct'])->name('product');
+
+
 
 
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
