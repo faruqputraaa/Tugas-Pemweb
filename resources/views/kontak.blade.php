@@ -1,11 +1,11 @@
 @extends('Layout.Navbar')
 @section('content')
 <section>
-    <div class="bg-gradient-to-r from-green-600 to-white">
+    <div class="bg-gradient-to-r from-green-600 to-white h-screen">
         <h1 class="text-3xl font-bold text-green-700 text-center mt-20">Apakah Anda Punya Pertanyaan?</h1>
     <h2 class="text-sm text-green-700 text-center mb-20">Jika kamu punya masalah mengenai Boikot Sampah. Silahkan isi form di bawah ini. Kami akan berusaha membalas 1X24 jam</h2>
     <div class="max-h-full">
-        <form action="contact.php" method="POST" class="contact-form max-w-md mx-auto bg-white p-8 rounded-lg shadow-xl">
+        <form action="contact.php" method="POST" class="contact-form max-w-md mx-auto bg-white p-8 rounded-lg shadow-xl max-sm:m-4">
             <div class="mb-4">
                 <label for="email" class="block font-bold">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Masukan email..." required

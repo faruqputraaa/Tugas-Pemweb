@@ -81,4 +81,10 @@ class UserController extends Controller
         $request->session()->forget('remember_token');
         return redirect()->route('login_form');
     }
+    public function showProduct()
+    {
+        $images = ['/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg', '/public/assets/images/buang-sampah.jpg'];
+
+        return view('product', compact('images'));
+    }
 }
