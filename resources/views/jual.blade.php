@@ -1,6 +1,6 @@
 @extends('Layout.Navbar')
 @section('content')
-    <form class="mx-44">
+    <form class="mx-2 md:mx-44">
         <div class=" mt-28 flex flex-col mx-6">
             <h1 class="text-xl font-bold">Masukkan Informasi Sampah Disini</h1>
             <p class="font-sm">Masukkan informasi detail mengenai sampah yang akan anda jual</p>
@@ -12,55 +12,56 @@
             <p class="font-sm">Pilih Jenis Sampah/Barang bekas yang akan kamu jual</p>
         </div>
         <div class="flex flex-col w-full justify-center mx-auto">
-            <div class="flex flex-wrap justify-center ">
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+            <div class="grid grid-cols-2 gap-2 md:grid-cols-4 w-full justify-center">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/kertas.png') }}">
                     <div class="h-1/2 w-full text-center">
                         <h1 class="font-bold">Kertas</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/plastik.png') }}">
                     <div class="h-1/2 w-full text-center">
                         <h1 class="font-bold">Plastik</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/logam.png') }}">
                     <div class="h-1/2 w-full text-center">
                         <h1 class="font-bold">Logam</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/kaca.png') }}">
                     <div class="h-1/2 w-full text-center">
                         <h1 class="font-bold">Kaca</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/tekstil.png') }}">
                     <div class="h-1/2 w-full text-center px-5">
                         <h1 class="font-bold">Tekstil</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/elektronik.png') }}">
                     <div class="h-1/2 w-full text-center px-5">
                         <h1 class="font-bold">Elektronik</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/karet.png') }}">
                     <div class="h-1/2 w-full text-center px-5">
                         <h1 class="font-bold">Karet</h1>
                     </div>
                 </div>
-                <div class="h-56 w-64 rounded-lg bg-white flex flex-col mx-4 my-4">
-                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/buang-sampah.jpg') }}">
+                <div class="border border-black rounded-lg bg-white flex flex-col mx-4 my-4">
+                    <img class="h-1/2 w-full rounded-t-lg" src="{{ asset('assets/images/sampah-lain.png') }}">
                     <div class="h-1/2 w-full text-center">
                         <h1 class="font-bold">Jenis Sampah Lainya</h1>
                     </div>
                 </div>
+            </div>
 
                 <div class="flex flex-row w-full mb-10">
                     <div class="w-1/2 flex flex-col justify-start px-6">
@@ -147,7 +148,7 @@
                             </div>
                             <small>supporting item</small>
                         </div>
-                        <div class="space-y-4 mt-52  pt-2">
+                        <div class="space-y-4 mt-44 pt-1">
                             <h1 class="text-2xl font-bold">Harga</h1>
                             <p class="text-sm">Masukkan Juduk dari Sampah atau barang bekas
                                 yang akan di jual dengan singkat dan jelas <br>(dalam Rp)
@@ -161,7 +162,7 @@
                             </div>
                             <small>supporting item</small>
                         </div>
-                        <div class="space-y-4 mt-20 pt-2">
+                        <div class="space-y-4 mt-16 pt-2">
                             <h1 class="text-xl font-bold">Alamat Lengkap</h1>
                             <div class="relative">
                                 <input type="text"
