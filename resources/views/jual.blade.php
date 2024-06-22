@@ -13,55 +13,14 @@
         </div>
         <div class="flex flex-col w-full justify-center">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mr-6 md:mr-0">
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/kertas.png') }}">
-                    <div class="h-1/4 w-full text-center">
-                        <h1 class="font-bold">Kertas</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/plastik.png') }}">
-                    <div class="h-1/4 w-full text-center">
-                        <h1 class="font-bold">Plastik</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/logam.png') }}">
-                    <div class="h-1/4 w-full text-center">
-                        <h1 class="font-bold">Logam</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/kaca.png') }}">
-                    <div class="h-1/4 w-full text-center">
-                        <h1 class="font-bold">Kaca</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/tekstil.png') }}">
-                    <div class="h-1/4 w-full text-center px-5">
-                        <h1 class="font-bold">Tekstil</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/elektronik.png') }}">
-                    <div class="h-1/4 w-full text-center px-5">
-                        <h1 class="font-bold">Elektronik</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/karet.png') }}">
-                    <div class="h-1/4 w-full text-center px-5">
-                        <h1 class="font-bold">Karet</h1>
-                    </div>
-                </div>
-                <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2">
-                    <img class="h-3/4 w-full rounded-t-lg" src="{{ asset('assets/images/sampah-lain.png') }}">
-                    <div class="h-1/4 w-full text-center">
-                        <h1 class="font-bold">Jenis Sampah Lainya</h1>
-                    </div>
-                </div>
+            @foreach ($items as $item)
+            <div class="h-36 w-full md:w-64 rounded-lg bg-white flex flex-col mx-4 my-4 border-2 cursor-pointer" data-name="{{ $item['name'] }}">
+                <img class="h-3/4 w-full rounded-t-lg" src="{{ asset($item['image']) }}">
+                <div class="h-1/4 w-full text-center">
+                <h1 class="font-bold">{{ $item['name'] }}</h1>
             </div>
+        </div>
+        @endforeach
 
             <div class="flex flex-col md:flex-row w-full mb-10">
                 <div class="md:w-1/2 flex flex-col justify-start px-6 mt-3">
@@ -186,4 +145,19 @@
         </div>
         </div>
     </form>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const divs = document.querySelectorAll('div[data-name]');
+        
+        divs.forEach(div => {
+            div.addEventListener('click', function() {
+                divs.forEach(d => d.classList.remove('border-green-500')); // Remove the green border from all divs
+                this.classList.add('border-green-500'); // Add the green border to the clicked div
+                
+                const selectedValue = this.getAttribute('data-name');
+                console.log(selectedValue); // You can handle the selected value here
+            });
+        });
+    });
+    </script>
 @endsection
