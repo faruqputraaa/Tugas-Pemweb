@@ -2,6 +2,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ItemsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
@@ -21,7 +22,7 @@ Route::get('/product', [UserController::class, 'product'])->name('product');
 Route::get('/beli', [UserController::class, 'beli'])->name('beli');
 Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
 Route::get('/product', [Controller::class, 'showProduct'])->name('product');
-
+Route::resource('items', ItemsController::class);
 
 
 

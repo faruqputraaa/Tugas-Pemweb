@@ -15,7 +15,7 @@ class Controller
 
     public function jual()
     {
-        $items = [
+        $datas = [
             ['name' => 'Kertas', 'image' => 'assets/images/kertas.png'],
             ['name' => 'Plastik', 'image' => 'assets/images/plastik.png'],
             ['name' => 'Logam', 'image' => 'assets/images/logam.png'],
@@ -26,9 +26,7 @@ class Controller
             ['name' => 'Jenis Sampah Lainya', 'image' => 'assets/images/sampah-lain.png'],
         ];
 
-        // return view('selectable-divs', ['items' => $items]);
-
-        return view('jual', compact('items'));
+        return view('jual', compact('datas'));
     }
     
     public function product()
