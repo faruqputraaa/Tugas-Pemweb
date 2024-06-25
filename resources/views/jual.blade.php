@@ -42,14 +42,15 @@
                                     <h1 class="text-2xl font-bold">Foto</h1>
                                     <p class="text-sm">Masukkan foto dari Sampah atau barang bekas yang akan di jual dengan singkat dan jelas</p>
                                     <label for="gambar" class="cursor-pointer bg-gray-300 hover:bg-gray-700 hover:text-white hover:fill-white py-4 px-4 rounded-lg inline-flex items-center border border-black">
-    <div class="flex flex-row items-center" style="height: 150px;">
-        <div class="flex flex-col justify-center mx-auto">
-            <x-bx-camera class="w-10 mx-10"/>
-            <input id="gambar" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)">
-        </div>
-        <img id="previewImage" class="hidden mt-2 rounded-md shadow-md w-24 h-24 object-cover" />
-    </div>
-</label>
+                                        <div class="flex flex-row items-center" style="height: 150px;">
+                                            <div class="flex flex-col justify-center mx-auto">
+                                                <x-bx-camera class="w-10 mx-10"/>
+                                                <input id="gambar" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)">
+                                            </div>
+                                            <img id="previewImage" class="hidden mt-2 rounded-md shadow-md w-24 h-24 object-cover" />
+                                        </div>
+                                        <!-- memperbaiki -->
+                                    </label>
 
                                 </div>
                                     {!! $errors->first('image', '<small class="text-red-500 text-sm">:message</small>') !!}
