@@ -62,18 +62,20 @@
             <h1>{{ $title }}</h1>
         </div>
         <div id="product-grid" class="grid grid-cols-2 grid-row md:grid-cols-3 lg:grid-cols-5 gap-6">
-            @for ($i = 0; $i < 8; $i++)
-            <a href="{{ route('product') }}" class="group">
+            <!-- Replace the static content with a foreach loop to display items -->
+            @foreach ($items as $item)
+            <a href="{{ route('product', ['id' => $item->id]) }}" class="group">
                 <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300">
-                    <img src="{{ asset('assets/images/buang-sampah.jpg') }}" alt="Kertas" class="h-32 sm:h-40 md:h-48 w-full object-cover">
+                    <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="h-32 sm:h-40 md:h-48 w-full object-cover">
                     <div class="p-2 bg-white">
-                        <h3 class="text-base sm:text-lg font-semibold mb-1">Kertas</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-1">Rp.$</p>
-                        <p class="text-gray-500 text-xs sm:text-sm">Kota</p>
+                        <h3 class="text-base sm:text-lg font-semibold mb-1">{{ $item->title }}</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-1">Rp.{{ $item->price }}</p>
+                        <p class="text-gray-500 text-xs sm:text-sm">{{ $item->city }}</p>
                     </div>
                 </div>
-            </a>                
-            @endfor
+            </a>
+            @endforeach
+
         </div>
         <button id="load-more" class="float-right text-black py-2 px-4 rounded mt-4">Tampilkan Lainnya</button>
     </section>

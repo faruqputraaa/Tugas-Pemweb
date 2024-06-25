@@ -29,10 +29,6 @@ class Controller
         return view('jual', compact('datas'));
     }
     
-    public function product()
-    {
-        return view('product');
-    }
     public function beli()
     {
         return view('beli');
