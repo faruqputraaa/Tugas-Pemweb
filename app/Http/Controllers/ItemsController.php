@@ -5,9 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Items;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Arr;
 
 class ItemsController extends Controller
 {
+    public function index()
+    {
+        $items = Items::all(); // Fetch all items from the database
+        return view('beli', ['items' => $items]);
+    }
+    public function product($id)
+    {
+        // Mencari item berdasarkan ID
+        $product = Items::findOrFail($id); // Menggunakan Eloquent findOrFail untuk mendapatkan item
+
+        // Mendapatkan semua item
+        $items = Items::all();
+        
+        // Mengembalikan view dengan data produk dan semua items
+        return view('product', compact('product', 'items', 'id'));
+    }
+    
     public function store(Request $request)
     {
         $validated = $request->validate([
