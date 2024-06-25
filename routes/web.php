@@ -2,6 +2,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ItemsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
@@ -17,13 +18,12 @@ Route::post('/register', [UserController::class, 'register_proses'])->name('regi
 
 Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
 Route::get('/jual', [UserController::class, 'jual'])->name('jual');
-Route::get('/product', [UserController::class, 'product'])->name('product');
+Route::get('/product/{id}', [ItemsController::class, 'product'])->name('product');
 Route::get('/beli', [UserController::class, 'beli'])->name('beli');
 Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
-Route::get('/product', [Controller::class, 'showProduct'])->name('product');
-
-
-
+Route::resource('items', ItemsController::class);
+Route::get('beli', [ItemsController::class, 'index'])->name('beli');
+Route::get('products', [ItemsController::class, 'product'])->name('products');
 
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
