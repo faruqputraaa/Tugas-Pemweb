@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Models\Items;
+
 class Controller
 {
     public function index()
@@ -31,7 +34,8 @@ class Controller
     
     public function beli()
     {
-        return view('beli');
+        $items = Items::all(); // Fetch all items from the database
+        return view('beli', ['items' => $items]);
     }
     public function login_form()
     {

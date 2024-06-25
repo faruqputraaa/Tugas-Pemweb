@@ -12,10 +12,10 @@
                     action="{{ route('login_action') }}">
                     @csrf
                     <div class="flex flex-col">
-                        <label for="name" class="text-base md:text-2xl md:mb-4 text-left font-bold">Nama Lengkap</label>
+                        <label for="name" class="text-base md:text-2xl md:mb-4 text-left font-bold">Email</label>
                         <div class="relative">
                             <input type="text" id="email" name="email"
-                                class="border-2 border-gray-400 rounded-md h-8 md:h-14 w-full p-4" placeholder="Nama Lengkap"
+                                class="border-2 border-gray-400 rounded-md h-8 md:h-14 w-full p-4" placeholder="Example@example.com"
                                 required>
                         </div>
                     </div>

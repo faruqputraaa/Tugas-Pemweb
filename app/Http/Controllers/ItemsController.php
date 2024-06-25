@@ -9,11 +9,7 @@ use Illuminate\Support\Arr;
 
 class ItemsController extends Controller
 {
-    public function index()
-    {
-        $items = Items::all(); // Fetch all items from the database
-        return view('beli', ['items' => $items]);
-    }
+    
     public function product($id)
     {
         // Mencari item berdasarkan ID

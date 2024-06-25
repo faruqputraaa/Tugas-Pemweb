@@ -6,10 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "guzzlehttp/guzzle": "*",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
-        "mallardduck/blade-boxicons": "^2.4"
+        "mailgun/mailgun-php": "^3.0",
+        "mallardduck/blade-boxicons": "^2.4",
+        "symfony/mailgun-mailer": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

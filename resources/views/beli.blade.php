@@ -1,4 +1,5 @@
 @extends('Layout.Navbar')
+
 @section('content')
 <div class="my-28">
     <section class="text-center space-y-5 mx-4 md:mx-20">
@@ -56,13 +57,12 @@
         </div>
     </section>
     <!-- Produk -->
-    @foreach (['Pilihan Untukmu', 'Rekomendasi Untukmu', 'Pilihan Lainnya'] as $title)
-    <section class="mx-4 md:mx-28 mt-{{ $loop->index == 0 ? 4 : 20 }}">
+    <section class="mx-4 md:mx-28 mt-4">
         <div class="md:text-3xl font-bold mb-4 md:mb-14">
-            <h1>{{ $title }}</h1>
+            <h1>Pilihan Untukmu</h1>
         </div>
-        <div id="product-grid" class="grid grid-cols-2 grid-row md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <!-- Replace the static content with a foreach loop to display items -->
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- Looping items -->
             @foreach ($items as $item)
             <a href="{{ route('product', ['id' => $item->id]) }}" class="group">
                 <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300">
@@ -75,10 +75,8 @@
                 </div>
             </a>
             @endforeach
-
         </div>
         <button id="load-more" class="float-right text-black py-2 px-4 rounded mt-4">Tampilkan Lainnya</button>
     </section>
-    @endforeach
 </div>
 @endsection
