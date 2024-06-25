@@ -19,7 +19,44 @@ class ItemsController extends Controller
         $items = Items::all();
         
         // Mengembalikan view dengan data produk dan semua items
-        return view('product', compact('product', 'items', 'id'));
+        return view('product', compact('product', 'items'));
+    }
+
+    public function type(Request $request)
+    {
+        $type = $request->input('type');
+        if ($type) {
+            $items = Items::where('type', $type)->get();
+        } else {
+            $items = Items::all();
+        }
+        
+        return view('beli', compact('items'));
+    }
+
+    public function userItems()
+    {
+        // Mendapatkan ID pengguna yang sedang login
+        $userId = Auth::id();
+
+        // Mengambil semua items milik pengguna yang sedang login
+        $items = Items::where('user_id', $userId)->get();
+
+        // Mengembalikan view dengan data items pengguna
+        return view('barangsaya', compact('items'));
+    }
+
+    public function destroy($id)
+    {
+        $item = Items::findOrFail($id);
+
+        // Pastikan hanya pengguna yang memiliki item yang dapat menghapusnya
+        if ($item->user_id == Auth::id()) {
+            $item->delete();
+            return redirect()->route('barangsaya')->with('success', 'Item has been deleted successfully.');
+        }
+
+        return redirect()->route('barangsaya')->with('error', 'You are not authorized to delete this item.');
     }
     
     public function store(Request $request)

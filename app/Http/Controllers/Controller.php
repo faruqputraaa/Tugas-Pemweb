@@ -32,11 +32,22 @@ class Controller
         return view('jual', compact('datas'));
     }
     
-    public function beli()
+    public function beli(Request $request, $type = null)
     {
-        $items = Items::all(); // Fetch all items from the database
+        $query = $request->input('search');
+
+        if ($query) {
+            $items = Items::where('title', 'LIKE', '%' . $query . '%')->get();
+        } elseif ($type) {
+            $items = Items::where('type', $type)->get();
+        } else {
+            $items = Items::all();
+        }
+
         return view('beli', ['items' => $items]);
     }
+    
+
     public function login_form()
     {
         return view('login');

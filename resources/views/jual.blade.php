@@ -2,7 +2,7 @@
 @section('content')
     <!-- Konten deskripsi produk -->
     <section class="overflow-hidden">
-        <div class="mx-44 md:mx-4 flex justify-center items-center py-20">
+        <div class="mx-4 md:mx-4 flex justify-center items-center py-20">
             <div>
                 <div class="text-3xl font-bold mb-10 md:mb-14 text-center">
                     <h1>Deskripsi Produk</h1>
@@ -37,7 +37,7 @@
                                     {!! $errors->first('title', '<small class="text-red-500 text-sm">:message</small>') !!}
                                     {!! $errors->has('title') ? '' : '<small>supporting item</small>' !!}
                                 </div>
-                                <div class="flex flex-col">
+                                <div class="flex flex-col justify-center">
                                 <div class="space-y-4">
                                     <h1 class="text-2xl font-bold">Foto</h1>
                                     <p class="text-sm">Masukkan foto dari Sampah atau barang bekas yang akan di jual dengan singkat dan jelas</p>
@@ -46,12 +46,11 @@
                                             <div class="flex flex-col justify-center mx-auto">
                                                 <x-bx-camera class="w-10 mx-10"/>
                                                 <input id="gambar" type="file" name="image" class="hidden" accept="image/*" onchange="previewImage(event)">
+                                                <img id="previewImage" class="hidden mt-2 rounded-md shadow-md h-24 object-cover" />
                                             </div>
-                                            <img id="previewImage" class="hidden mt-2 rounded-md shadow-md w-24 h-24 object-cover" />
+                                            
                                         </div>
-                                        <!-- memperbaiki -->
                                     </label>
-
                                 </div>
                                     {!! $errors->first('image', '<small class="text-red-500 text-sm">:message</small>') !!}
                                     {!! $errors->has('image') ? '' : '<small>supporting item</small>' !!}
@@ -94,9 +93,9 @@
                                     {!! $errors->first('district', '<small class="text-red-500 text-sm">:message</small>') !!}
                                     {!! $errors->has('district') ? '' : '<small>supporting item</small>' !!}
                                 </div>
-                                <button class="inline-block rounded-full py-3 w-4/5 mx-auto font-bold bg-white text-green-500 border-green-500 text-3xl mt-20 ml-auto shadow-sm shadow-black max-md:hidden" href="/jual-sampah">Batal</button>
+                                <a class="inline-block rounded-full py-3 w-4/5 text-center mx-auto font-bold bg-white text-green-500 border-green-500 text-3xl mt-20 ml-auto shadow-sm shadow-black max-md:hidden" href="{{ route('layanan') }}">Batal</a>
                             </div>
-                            <div class="md:w-1/2 flex flex-col px-6">
+                            <div class="md:w-1/2 flex flex-col px-6 md:mt-3">
                                 <div class="space-y-4">
                                     <h1 class="text-2xl font-bold">Deskripsi</h1>
                                     <p class="text-sm">Masukkan Deskripsi dari sampah yang akan di jual dengan jelas dan rinci</p>
@@ -107,7 +106,7 @@
                                     {!! $errors->first('description', '<small class="text-red-500 text-sm">:message</small>') !!}
                                     {!! $errors->has('description') ? '' : '<small>supporting item</small>' !!}
                                 </div>
-                                <div class="space-y-4 mt-52 pt-2">
+                                <div class="space-y-4 md:mt-64 pt-9">
                                     <h1 class="text-2xl font-bold">Harga</h1>
                                     <p class="text-sm">Masukkan harga dari Sampah atau barang bekas yang akan dijual <br>(dalam Rp)</p>
                                     <div class="relative">
@@ -118,7 +117,7 @@
                                     {!! $errors->first('price', '<small class="text-red-500 text-sm">:message</small>') !!}
                                     {!! $errors->has('price') ? '' : '<small>supporting item</small>' !!}
                                 </div>
-                                <div class="space-y-4 mt-20 pt-2">
+                                <div class="space-y-4 md:mt-16 pt-1.5">
                                     <h1 class="text-xl font-bold">Alamat Lengkap</h1>
                                     <div class="relative">
                                         <input type="text" name="full_address" class="border-2 text-clip border-gray-400 rounded-md h-44 w-full p-4">
@@ -128,8 +127,8 @@
                                     {!! $errors->has('full_address') ? '' : '<small>supporting item</small>' !!}
                                 </div>
                                 <div class="flex flex-row space-x-3">
-                                    <button class="inline-block rounded-full py-3 w-full font-bold bg-white text-green-500 text-3xl mt-20 shadow-sm shadow-black md:hidden" href="/jual-sampah">Batal</button>
-                                    <button type="submit" class="inline-block rounded-full py-3 w-full font-bold bg-green-500 text-white text-3xl mt-20 shadow-sm shadow-black">Jual</button>
+                                    <a class="inline-block rounded-full py-3 w-full text-center font-bold bg-white text-green-500 text-3xl mt-20 shadow-sm shadow-black md:hidden" href="{{ route('layanan') }}">Batal</a>
+                                    <button type="submit" class="inline-block rounded-full py-3 w-full font-bold bg-green-500 text-white text-3xl mt-20 md:mt-44 shadow-sm shadow-black">Jual</button>
                                 </div>
                             </div>
                         </div>

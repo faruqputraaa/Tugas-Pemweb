@@ -21,14 +21,18 @@ Route::get('/register', [UserController::class, 'register_form'])->name('registe
 Route::post('/register', [UserController::class, 'register_proses'])->name('register_proses');
 
 // Routes untuk layanan, jual, beli, dan kontak
+
 Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
 Route::get('/jual', [UserController::class, 'jual'])->name('jual');
 Route::get('/beli', [UserController::class, 'beli'])->name('beli');
 Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
 
 // Routes untuk items
+Route::post('/jual', [ItemsController::class, 'store'])->name('items.store');
 Route::get('product/{id}', [ItemsController::class, 'product'])->name('product');
-Route::resource('items', ItemsController::class);
+Route::get('beli/{type}', [ItemsController::class, 'beli'])->name('item.category');
+Route::get('/user/items', [ItemsController::class, 'userItems'])->name('barangsaya');
+Route::delete('/user/items/{id}', [ItemsController::class, 'destroy'])->name('hapusbarang');
 
 // Routes untuk reset password
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');

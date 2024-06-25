@@ -46,6 +46,7 @@
                     <div class="flex flex-col space-y-4 items-center">
                         @auth
                             <div class="text-gray-700">{{ Auth::user()->name }}</div>
+                            <a href="{{ route('barangsaya') }}" class="text-gray-700">barang saya</a>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="inline-block rounded-full px-4 py-2 bg-green-700 text-white">Logout</button>
@@ -82,6 +83,7 @@
             <div class="flex space-x-4 items-center text-center">
                 @auth
                     <div class="text-gray-700">{{ Auth::user()->name }}</div>
+                    <a href="{{ route('barangsaya') }}" class="text-gray-700">barang saya</a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit"

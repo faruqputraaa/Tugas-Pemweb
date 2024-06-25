@@ -14,4 +14,8 @@ class ProductController extends Controller
 
         return view('product', compact('images'));
     }
+
+    // ProductController.php
+
+
 }
