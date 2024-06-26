@@ -1,7 +1,7 @@
 @extends('Layout.Navbar')
 
 @section('content')
-<div class="bg-gradient-to-r from-white to-green-600 h-screen">
+<div class="bg-gradient-to-r from-white to-green-600 min-h-screen pb-20">
     <section class="text-center py-20 space-y-5 mx-4 md:mx-20">
         <h1 class="text-2xl font-bold mb-5">Items Anda</h1>
         
@@ -12,11 +12,11 @@
                 @foreach ($items as $item)
                 <div class="group relative">
                     <a href="{{ route('product', ['id' => $item->id]) }}" class="block">
-                        <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300">
+                        <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300 h-64 sm:h-72 md:h-80">
                             <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="h-32 sm:h-40 md:h-48 w-full object-cover">
-                            <div class="p-2 bg-white">
+                            <div class="p-2 bg-white h-32 flex flex-col justify-start">
                                 <h3 class="text-base sm:text-lg font-semibold mb-1">{{ $item->title }}</h3>
-                                <p class="text-gray-500 text-xs sm:text-sm mb-1">Rp.{{ $item->price }}</p>
+                                <p class="text-gray-500 text-sm font-semibold sm:text-sm">Rp.{{ $item->price }}</p>
                                 <p class="text-gray-500 text-xs sm:text-sm">{{ $item->city }}</p>
                             </div>
                         </div>

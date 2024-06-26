@@ -7,32 +7,36 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Mail;
 
 // Route untuk halaman utama
 Route::get('/', [Controller::class, 'index'])->name('index');
 
 // Routes untuk login
-Route::get('/login', [UserController::class, 'login_form'])->name('login_form');
+Route::get('/login', [UserController::class, 'login_form'])->name('login');
 Route::post('/login', [UserController::class, 'login_action'])->name('login_action');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // Routes untuk register
 Route::get('/register', [UserController::class, 'register_form'])->name('register_form');
 Route::post('/register', [UserController::class, 'register_proses'])->name('register_proses');
+Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
+Route::get('/beli', [UserController::class, 'beli'])->name('beli');
 
 // Routes untuk layanan, jual, beli, dan kontak
-
-Route::get('/layanan', [UserController::class, 'layanan'])->name('layanan');
-Route::get('/jual', [UserController::class, 'jual'])->name('jual');
-Route::get('/beli', [UserController::class, 'beli'])->name('beli');
-Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/jual', [UserController::class, 'jual'])->name('jual');
+    Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
+});
 
 // Routes untuk items
-Route::post('/jual', [ItemsController::class, 'store'])->name('items.store');
-Route::get('product/{id}', [ItemsController::class, 'product'])->name('product');
-Route::get('beli/{type}', [ItemsController::class, 'beli'])->name('item.category');
-Route::get('/user/items', [ItemsController::class, 'userItems'])->name('barangsaya');
-Route::delete('/user/items/{id}', [ItemsController::class, 'destroy'])->name('hapusbarang');
+Route::middleware(['auth'])->group(function () {
+    Route::post('/jual', [ItemsController::class, 'store'])->name('items.store');
+    Route::get('product/{id}', [ItemsController::class, 'product'])->name('product');
+    Route::get('beli/{type}', [ItemsController::class, 'beli'])->name('item.category');
+    Route::get('/user/items', [ItemsController::class, 'userItems'])->name('barangsaya');
+    Route::delete('/user/items/{id}', [ItemsController::class, 'destroy'])->name('hapusbarang');
+});
 
 // Routes untuk reset password
 Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
@@ -40,6 +44,15 @@ Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkE
 Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
+Route::get('/send-email', function () {
+    $details = [
+        'title' => 'Mail from ',
+        'body' => 'This is a test email sent from Laravel application'
+    ];
 
+    Mail::to('rama420@students.amikom.ac.id')->send(new \App\Mail\TestMail($details));
 
-Route::post('/contact/send', [ContactController::class, 'sendContactForm'])->name('contact.send');
+    return 'Email sent successfully';
+});
+
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

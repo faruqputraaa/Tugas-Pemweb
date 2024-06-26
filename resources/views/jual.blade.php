@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="space-y-4 md:mt-64 pt-9">
                                     <h1 class="text-2xl font-bold">Harga</h1>
-                                    <p class="text-sm">Masukkan harga dari Sampah atau barang bekas yang akan dijual <br>(dalam Rp)</p>
+                                    <p class="text-sm">Masukkan harga dari Sampah atau barang bekas yang akan dijual <br>(Harga per Kilogram)</p>
                                     <div class="relative">
                                         <input type="text" name="price" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Harga</label>

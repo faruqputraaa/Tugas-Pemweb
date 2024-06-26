@@ -138,7 +138,7 @@
                 <p class="text-lg text-gray-500">Pemilahan Sampah bukan hanya mengurangi Volume Sampah Akan tetapi juga menciptakan lingkungan yang bersih dan sehat. Dengan pemilahan yang baik kita dapat menambah nilai sampah yang dapat di daur ulang, mengurangi dampak negatif sampah pada lingkungan
                     dan meningkatkan kesehatan manusia</p>
                 <a class="justify-self-center md:justify-self-start inline-block rounded-full px-8 py-3 bg-green-500 text-white  shadow-xl shadow-green-300"
-                    href="/register">Mulai Pelajari Caranya</a>
+                    href="https://www.nestle.co.id/kisah/cara-pengolahan-sampah-yang-baik-dan-benar">Mulai Pelajari Caranya</a>
             </div>
         </section>
 

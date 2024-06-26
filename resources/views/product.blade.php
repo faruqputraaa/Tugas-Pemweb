@@ -19,14 +19,14 @@
                             </div>
                             <div class="p-4 bg-white h-full flex flex-col justify-between md:w-1/2">
                                 <div>
-                                    <h3 class="text-xl font-semibold mb-2">{{ $product->title }}</h3>
+                                    <h3 class="text-2xl font-semibold mb-2">{{ $product->title }}</h3>
                                     <p class="text-gray-500 mb-2 md:mb-4">Deskripsi: <br>{{ $product->description }}</p>
                                 </div>
                                 <div>
-                                    <p class="text-gray-500">Harga: Rp. {{ number_format($product->price, 0, ',', '.') }}</p>
-                                    <p class="text-gray-500">Alamat: {{ $product->full_address }}</p>
+                                    <p class="text-gray-500">Harga Per Kilogram: Rp. <br> <span class="font-bold text-xl md:text-2xl">{{ number_format($product->price, 0, ',', '.') }}<span></p>
+                                    <p class="text-gray-500">Alamat: <br> <span class="text-sm my-0">{{ $product->full_address }}<span></p>
                                     <!-- Tombol WhatsApp -->
-                                    <a href="https://wa.me/62{{ $product->phone_number }}" target="_blank" class="mt-8 md:mt-24 inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Hubungi Penjual</a>
+                                    <a href="https://wa.me/62{{ $product->phone_number }}" target="_blank" class="mt-8 md:mt-20 inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Hubungi Penjual</a>
                                 </div>
                             </div>
                         </div>

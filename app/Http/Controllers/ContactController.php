@@ -1,29 +1,32 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\ContactMail;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function sendContactForm(Request $request)
+    public function send(Request $request)
     {
+        // Validate the request
         $request->validate([
-            'email' => 'required|email',
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
-        $details = [
-            'email' => $request->email,
+        // Prepare email data
+        $emailData = [
             'subject' => $request->subject,
-            'message' => $request->message,
+            'messageContent' => $request->message,
         ];
 
-        Mail::to('rama420@students.amikom.ac.id')->send(new ContactMail($details));
+        // Send email
+        Mail::send('emails.contact', $emailData, function ($message) use ($emailData) {
+            $message->to('rama420@students.amikom.ac.id')
+                    ->subject($emailData['subject']);
+        });
 
-        return back()->with('success', 'Pesan telah terkirim.');
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 }

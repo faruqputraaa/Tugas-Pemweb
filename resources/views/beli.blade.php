@@ -31,8 +31,10 @@
                         <a href="{{ route('item.category', ['type' => 'Logam']) }}" class="text-gray-700">Logam</a>
                         <a href="{{ route('item.category', ['type' => 'Kaca']) }}" class="text-gray-700">Kaca</a>
                         <a href="{{ route('item.category', ['type' => 'Elektronik']) }}" class="text-gray-700">Elektronik</a>
+                        <a href="{{ route('item.category', ['type' => 'Plastik']) }}" class="text-gray-700">Plastik</a>
                         <a href="{{ route('item.category', ['type' => 'Karet']) }}" class="text-gray-700">Karet</a>
-                        <a href="{{ route('item.category', ['type' => 'Lainnya']) }}" class="text-gray-700">Lainnya</a>
+                        <a href="{{ route('item.category', ['type' => 'Tekstil']) }}" class="text-gray-700">Tekstil</a>
+                        <a href="{{ route('item.category', ['type' => 'Jenis Sampah Lainya']) }}" class="text-gray-700">Lainnya</a>
                     </div>
                 </div>
 
@@ -43,8 +45,10 @@
                         <li><a href="{{ route('item.category', ['type' => 'Logam']) }}" class="block px-4 py-2">Logam</a></li>
                         <li><a href="{{ route('item.category', ['type' => 'Kaca']) }}" class="block px-4 py-2">Kaca</a></li>
                         <li><a href="{{ route('item.category', ['type' => 'Elektronik']) }}" class="block px-4 py-2">Elektronik</a></li>
+                        <li><a href="{{ route('item.category', ['type' => 'Plastik']) }}" class="block px-4 py-2">Plastik</a></li>
+                        <li><a href="{{ route('item.category', ['type' => 'Tekstil']) }}" class="block px-4 py-2">Teksil</a></li>
                         <li><a href="{{ route('item.category', ['type' => 'Karet']) }}" class="block px-4 py-2">Karet</a></li>
-                        <li><a href="{{ route('item.category', ['type' => 'Lainnya']) }}" class="block px-4 py-2">Lainnya</a></li>
+                        <li><a href="{{ route('item.category', ['type' => 'Jenis Sampah Lainya']) }}" class="block px-4 py-2">Lainnya</a></li>
                     </ul>
                 </div>
         </div>
@@ -58,17 +62,18 @@
             <!-- Looping items -->
             @foreach ($items as $item)
             <a href="{{ route('product', ['id' => $item->id]) }}" class="group">
-                <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300">
+                <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300 h-64 sm:h-72 md:h-80">
                     <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="h-32 sm:h-40 md:h-48 w-full object-cover">
-                    <div class="p-2 bg-white">
+                    <div class="p-2 bg-white h-32 flex flex-col justify-start">
                         <h3 class="text-base sm:text-lg font-semibold mb-1">{{ $item->title }}</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-1">Rp.{{ $item->price }}</p>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-0">Rp.{{ $item->price }}</p>
                         <p class="text-gray-500 text-xs sm:text-sm">{{ $item->city }}</p>
                     </div>
                 </div>
             </a>
             @endforeach
         </div>
+
         <button id="load-more" class="float-right text-black py-2 px-4 rounded mt-4">Tampilkan Lainnya</button>
     </section>
 </div>
