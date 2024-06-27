@@ -6,5 +6,6 @@ Perintah di terminal untuk menjalankan laravel
 4. cp .env.example to .env (samakan database dengan kepunyaan)
 4. php artisan key:generate
 5. php artisan migrate
-6. php artisan cache:clear
-7. php artisan serve
+6. php artisan storage:link
+7. php artisan cache:clear
+8. php artisan serve
