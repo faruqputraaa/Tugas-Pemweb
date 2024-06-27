@@ -1,24 +1,42 @@
 <?php
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class ContactFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
+    public $subject;
+    public $message;
 
-    public function __construct($details)
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+    public function __construct($subject, $message)
     {
-        $this->details = $details;
+        $this->subject = $subject;
+        $this->message = $message;
     }
 
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
     public function build()
     {
-        return $this->subject('Mail from Laravel')
-                    ->view('emails.test');
+        return $this->from(config('mail.from.address'))
+                    ->subject($this->subject)
+                    ->view('emails.contact')
+                    ->with([
+                        'subject' => $this->subject,
+                        'message' => $this->message,
+                    ]);
     }
 }

@@ -52,7 +52,7 @@ class UserController extends Controller
 
         User::create($data);
 
-        return redirect()->route('login_form');
+        return redirect()->route('login');
     }
 
 

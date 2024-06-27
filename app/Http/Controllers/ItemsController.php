@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Items;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str; 
+use Illuminate\Support\Facades\Storage;
 
 class ItemsController extends Controller
 {
@@ -58,6 +60,40 @@ class ItemsController extends Controller
 
         return redirect()->route('barangsaya')->with('error', 'You are not authorized to delete this item.');
     }
+
+    public function update(Request $request, $id)
+    {
+        $item = Items::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'weight' => 'nullable|numeric',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $item->title = $request->title;
+        $item->price = $request->price;
+        $item->weight = $request->weight;
+
+        if ($request->hasFile('image')) {
+            // Delete the old image if it exists
+            if ($item->image_path) {
+                Storage::disk('public')->delete($item->image_path);
+            }
+
+            // Generate a file name using the item's title and the original extension
+            $imageName = Str::slug($request->title) . '.' . $request->file('image')->getClientOriginalExtension();
+            
+            // Store the file with the generated file name
+            $imagePath = $request->file('image')->storeAs('items', $imageName, 'public');
+            $item->image_path = $imagePath;
+        }
+
+        $item->save();
+
+        return redirect()->route('barangsaya')->with('success', 'Sampah Berhasil di Perbarui');
+    }
     
     public function store(Request $request)
     {
@@ -87,7 +123,15 @@ class ItemsController extends Controller
         $item->full_address = $validated['full_address'];
         
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('items', 'public');
+            // Get the original file name and extension
+            $originalName = $request->file('image')->getClientOriginalName();
+            $extension = $request->file('image')->getClientOriginalExtension();
+            
+            // Generate a file name using the item's title and the original extension
+            $fileName = Str::slug($validated['title']) . '.' . $extension;
+            
+            // Store the file with the generated file name
+            $imagePath = $request->file('image')->storeAs('items', $fileName, 'public');
             $item->image_path = $imagePath;
         }
         
@@ -95,5 +139,6 @@ class ItemsController extends Controller
         
         return redirect()->route('beli')->with('success', 'Product has been created successfully.');        
     }
+    
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,6 +13,9 @@ class ContactController extends Controller
         $request->validate([
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
+        ], [
+            'subject.required' => 'Subjek harus diisi.',
+            'message.required' => 'Pesan harus diisi.',
         ]);
 
         // Prepare email data
@@ -27,6 +31,6 @@ class ContactController extends Controller
         });
 
         // Redirect back with success message
-        return redirect()->back()->with('success', 'Your message has been sent successfully!');
+        return redirect()->back()->with('success', 'Pesan Anda telah berhasil dikirim!');
     }
 }

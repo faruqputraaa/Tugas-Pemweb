@@ -132,7 +132,7 @@
                 <div class="border-2 border-green-500 border-solid w-1/2 mx-auto absolute inset-0 transform rotate-12">
                 </div>
                 <img class="h-40 mx-auto rounded-lg shadow-lg relative z-10"
-                    src="{{ asset('assets/images/buang-sampah.jpg') }}" alt="">
+                    src="{{ asset('assets/images/layanan-1.jpg') }}" alt="">
             </div>
             <div class="md:w-1/2 text-center md:text-left space-y-4 grid justify-items-stretch">
                 <p class="text-lg text-gray-500">Pemilahan Sampah bukan hanya mengurangi Volume Sampah Akan tetapi juga menciptakan lingkungan yang bersih dan sehat. Dengan pemilahan yang baik kita dapat menambah nilai sampah yang dapat di daur ulang, mengurangi dampak negatif sampah pada lingkungan
@@ -164,7 +164,7 @@
                 <div class="border-2 border-green-500 border-solid w-1/2 mx-auto absolute inset-0 transform rotate-12">
                 </div>
                 <img class="h-40 mx-auto rounded-lg shadow-lg relative z-10"
-                    src="{{ asset('assets/images/buang-sampah.jpg') }}" alt="">
+                    src="{{ asset('assets/images/layanan-3.jpeg') }}" alt="">
             </div>
             <div class="md:w-1/2 text-center space-y-4 grid justify-items-stretch">
                 <h1 class="text-4xl font-bold text-gray-800 mb-8">Dukungan UMKM Gratis </h1>

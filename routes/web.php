@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ContactController;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Mail;   
 
 // Route untuk halaman utama
 Route::get('/', [Controller::class, 'index'])->name('index');
@@ -35,14 +35,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('product/{id}', [ItemsController::class, 'product'])->name('product');
     Route::get('beli/{type}', [ItemsController::class, 'beli'])->name('item.category');
     Route::get('/user/items', [ItemsController::class, 'userItems'])->name('barangsaya');
+    Route::put('/user/items/{id}', [ItemsController::class, 'update'])->name('updatebarang');
     Route::delete('/user/items/{id}', [ItemsController::class, 'destroy'])->name('hapusbarang');
 });
 
-// Routes untuk reset password
-Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::get('password/reset', [\App\Http\Controllers\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [\App\Http\Controllers\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [\App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [\App\Http\Controllers\ResetPasswordController::class, 'reset'])->name('password.update');
 
 Route::get('/send-email', function () {
     $details = [
@@ -53,6 +53,15 @@ Route::get('/send-email', function () {
     Mail::to('rama420@students.amikom.ac.id')->send(new \App\Mail\TestMail($details));
 
     return 'Email sent successfully';
+});
+
+Route::get('/test-email', function () {
+    Mail::raw('This is a test email', function ($message) {
+        $message->to('your-email@example.com')
+                ->subject('Test Email');
+    });
+
+    return 'Test email sent.';
 });
 
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

@@ -15,7 +15,7 @@
                     @error('name')
                     <small>{{ $message }}</small>
                     @enderror
-                    <small class="ml-4">supporting text</small>
+                    <small class="ml-4">Masukkan Username</small>
                 </div>
                 <div class="flex flex-col">
                     <label class="text-2xl mb-4 text-left font-bold">Password</label>
@@ -37,7 +37,7 @@
                     @error('email')
                     <small>{{ $message }}</small>
                     @enderror
-                    <small class="ml-4">supporting text</small>
+                    <small class="ml-4">Masukkan Email Anda</small>
                 </div>
                 <div class="flex flex-col">
                     <label class="text-2xl mb-4 text-left font-bold">No HP/WhatsApp</label>
@@ -48,7 +48,7 @@
                         @error('nohp')
                         <small>{{ $message }}</small>
                         @enderror
-                        <small>supporting text</small>
+                        <small  class="ml-4">Masukkan Nomor whatsapp aktif</small>
                 </div>
                 <div class="flex flex-col space-y-2">
                     <button type="submit" class="bg-green-600 text-white h-14 text-xl font-sans font-semibold rounded-lg">Daftar</button>

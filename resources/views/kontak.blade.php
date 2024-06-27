@@ -17,10 +17,16 @@
                 <div class="mb-4">
                     <label for="subject" class="block font-bold">Subjek:</label>
                     <input type="text" id="subject" name="subject" placeholder="Masukan Subjek..." required class="w-full px-3 py-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none">
+                    @error('subject')
+                        <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="message" class="block font-bold">Pesan:</label>
                     <textarea id="message" name="message" placeholder="Masukan Pesan..." required class="w-full px-3 py-2 rounded border border-gray-300 focus:border-green-500 focus:outline-none"></textarea>
+                    @error('message')
+                        <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="text-center">
                     <input type="submit" id="submit" name="submit" value="Kirim" class="bg-green-500 text-white px-6 py-3 rounded-full shadow-xl cursor-pointer transition-colors duration-300 hover:bg-blue-700">

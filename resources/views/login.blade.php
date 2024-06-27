@@ -33,10 +33,6 @@
                         @endif
                         <small><a href="{{ route('password.request') }}">Lupa password</a></small>
                     </div>
-                    <div class="flex items-center">
-                        <input type="checkbox" name="remember" id="remember" class="mr-2">
-                        <label for="remember">Remember Me</label>
-                    </div>
                     <button type="submit"
                         class="bg-green-600 text-white h-8 md:h-14 text-xl font-sans font-semibold rounded-lg">Masuk</button>
                 </form>

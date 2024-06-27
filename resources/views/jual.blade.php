@@ -35,7 +35,7 @@
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Judul</label>
                                     </div>
                                     {!! $errors->first('title', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('title') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('title') ? '' : '<small>Masukkan Judul Sampah anda</small>' !!}
                                 </div>
                                 <div class="flex flex-col justify-center">
                                 <div class="space-y-4">
@@ -53,7 +53,7 @@
                                     </label>
                                 </div>
                                     {!! $errors->first('image', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('image') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('image') ? '' : '<small>JPG|JPEG|PNG</small>' !!}
                                 </div>
                                     <div class="space-y-4 mt-10">
                                     <h1 class="text-2xl font-bold">Berat</h1>
@@ -63,7 +63,7 @@
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Berat</label>
                                     </div>
                                     {!! $errors->first('weight', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('weight') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('weight') ? '' : '<small>Gunakan Bilangan Bulat</small>' !!}
                                 </div>
                                 <div class="space-y-4">
                                     <h1 class="text-2xl font-bold">Alamat</h1>
@@ -76,7 +76,7 @@
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Nomor HP</label>
                                     </div>
                                     {!! $errors->first('phone_number', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('phone_number') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('phone_number') ? '' : '<small>gunakan nomor whatsapp aktif</small>' !!}
                                 </div>
                                 <div class="space-y-4">
                                     <h1 class="text-xl font-bold">Kota & Kecamatan</h1>
@@ -85,13 +85,13 @@
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Kota</label>
                                     </div>
                                     {!! $errors->first('city', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('city') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('city') ? '' : '<small>Masukkan Kota domisli</small>' !!}
                                     <div class="relative">
                                         <input type="text" name="district" class="border-2 border-gray-400 rounded-md h-14 w-full p-4">
                                         <label class="absolute bottom-12 bg-white left-3 text-xs text-black font-semibold px-1">Kecamatan</label>
                                     </div>
                                     {!! $errors->first('district', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('district') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('district') ? '' : '<small>Masukkan Kecamatan domisli</small>' !!}
                                 </div>
                                 <a class="inline-block rounded-full py-3 w-4/5 text-center mx-auto font-bold bg-white text-green-500 border-green-500 text-3xl mt-20 ml-auto shadow-sm shadow-black max-md:hidden" href="{{ route('layanan') }}">Batal</a>
                             </div>
@@ -104,7 +104,7 @@
                                         <label class="absolute bottom-28 bg-white left-3 text-xs text-black font-semibold px-1 pb-2">Deskripsi</label>
                                     </div>
                                     {!! $errors->first('description', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('description') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('description') ? '' : '<small>Deskripsikan Sampah Anda</small>' !!}
                                 </div>
                                 <div class="space-y-4 md:mt-64 pt-9">
                                     <h1 class="text-2xl font-bold">Harga</h1>
@@ -115,7 +115,7 @@
                                         <label class="absolute bottom-4 bg-transparent right-4 text-xl text-black font-bold px-1">Rp</label>
                                     </div>
                                     {!! $errors->first('price', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('price') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('price') ? '' : '<small>Harga per Kilogram</small>' !!}
                                 </div>
                                 <div class="space-y-4 md:mt-16 pt-1.5">
                                     <h1 class="text-xl font-bold">Alamat Lengkap</h1>
@@ -124,7 +124,7 @@
                                         <label class="absolute bottom-40 bg-white left-3 text-xs text-black font-semibold px-1 pb-2">Alamat Lengkap</label>
                                     </div>
                                     {!! $errors->first('full_address', '<small class="text-red-500 text-sm">:message</small>') !!}
-                                    {!! $errors->has('full_address') ? '' : '<small>supporting item</small>' !!}
+                                    {!! $errors->has('full_address') ? '' : '<small>Masukkan Alamat Lengkap anda</small>' !!}
                                 </div>
                                 <div class="flex flex-row space-x-3">
                                     <a class="inline-block rounded-full py-3 w-full text-center font-bold bg-white text-green-500 text-3xl mt-20 shadow-sm shadow-black md:hidden" href="{{ route('layanan') }}">Batal</a>

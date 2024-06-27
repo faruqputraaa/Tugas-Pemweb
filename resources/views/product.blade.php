@@ -26,7 +26,7 @@
                                     <p class="text-gray-500">Harga Per Kilogram: Rp. <br> <span class="font-bold text-xl md:text-2xl">{{ number_format($product->price, 0, ',', '.') }}<span></p>
                                     <p class="text-gray-500">Alamat: <br> <span class="text-sm my-0">{{ $product->full_address }}<span></p>
                                     <!-- Tombol WhatsApp -->
-                                    <a href="https://wa.me/62{{ $product->phone_number }}" target="_blank" class="mt-8 md:mt-20 inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Hubungi Penjual</a>
+                                    <a href="https://wa.me/62{{ $product->phone_number }}" target="_blank" class="inline-block rounded-full px-4 py-3 bg-green-500 text-white mt-4">Hubungi Penjual</a>
                                 </div>
                             </div>
                         </div>

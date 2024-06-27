@@ -33,7 +33,7 @@ class ContactFormMail extends Mailable
     {
         return $this->from(config('mail.from.address'))
                     ->subject($this->subject)
-                    ->view('emails.contact_form')
+                    ->view('emails.contact')
                     ->with([
                         'subject' => $this->subject,
                         'message' => $this->message,

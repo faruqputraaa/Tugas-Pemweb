@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('type');
             $table->text('description');
             $table->string('image_path')->nullable();
-            $table->decimal('weight', 8, 2)->nullable();
+            $table->float('weight', 8, 2)->nullable();
             $table->decimal('price', 8, 2);
             $table->string('phone_number');
             $table->string('city');
