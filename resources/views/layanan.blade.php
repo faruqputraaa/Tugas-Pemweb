@@ -1,7 +1,7 @@
 @extends('Layout.Navbar')
 @section('content')
     <section class="w-2/3 flex flex-col justify-center mx-auto h-screen">
-        <img class="w-2/3 justify-center mx-auto mb-10" src="{{ asset('assets/images/logo-2.png') }}">
+        <img class="justify-center mx-auto m-24" src="{{ asset('assets/images/logo-2.png') }}">
         <h1 class="text-4xl font-bold justify-center mx-auto">Manfaatkan Sampahmu dengan <span
                 class="text-green-500">sebaik-baiknya</span></h1>
         <p class="mt-6 text-justify">Fitur layanan "Boikot Sampah" bertujuan untuk menghubungkan individu yang ingin
@@ -15,7 +15,7 @@
     <section class="flex flex-col w-full px-4 md:px-12 justify-center mx-auto mb-20">
         <h1 class="text-4xl font-bold text-center p-10 mb-10 mt-10 lg:mt-0">Jenis Sampah Apa Saja Yang Bisa Dijual?</h1>
 
-        <div id="product-grid" class="grid grid-cols-2 grid-row md:grid-cols-4 gap-6">
+        <div id="product-grid" class="grid grid-cols-2 grid-row md:grid-cols-4 gap-6 p-24">
             <div class="overflow-hidden rounded-lg shadow-md group-hover:shadow-xl transition duration-300">
                 <img src="{{ asset('assets/images/kertas.png') }}" alt="Kertas" class="h-32 sm:h-40 md:h-48 w-full object-cover">
                 <div class="p-2 bg-white">

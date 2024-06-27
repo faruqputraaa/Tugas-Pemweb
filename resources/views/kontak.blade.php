@@ -1,7 +1,7 @@
 @extends('Layout.Navbar')
 @section('content')
 <section>
-    <div class="bg-gradient-to-r from-green-600 to-white min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-r from-white to-green-600 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div>
                 <h1 class="text-3xl font-extrabold text-green-700 text-center">Apakah Anda Punya Pertanyaan?</h1>

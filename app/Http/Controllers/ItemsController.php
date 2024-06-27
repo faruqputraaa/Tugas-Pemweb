@@ -54,6 +54,9 @@ class ItemsController extends Controller
 
         // Pastikan hanya pengguna yang memiliki item yang dapat menghapusnya
         if ($item->user_id == Auth::id()) {
+            if ($item->image_path) {
+                Storage::disk('public')->delete($item->image_path);
+            }
             $item->delete();
             return redirect()->route('barangsaya')->with('success', 'Item has been deleted successfully.');
         }
